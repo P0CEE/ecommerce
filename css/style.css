@@ -1,32 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Muli:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&subset=latin-ext,vietnamese');
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese');
 
-
-/*
- * Table of contents:
- * 
- * 1. Primary
- * 2. Preloader style
- * 3. Colors
- * 4. Elements
- * 5. Navbar
- * 6. Forms
- * 7. Checkboxes & Radios
- * 8. Modals
- * 9. Accordion
- * 10. Gallery
- * 11. Navigation
- * 12. Hero sections
- * 13. Services sections
- * 14. Portfolio sections
- * 15. Blog sections
- * 16. Shop sections
- * 17. Media/Retina Ready
- *
- */
-
-
-
 :root {
 	font-size: 20px;
     --blue: #598bfd;
@@ -2156,11 +2130,6 @@ input[type="checkbox"]:checked + .switch:after {
 	background-image: url('../img/background-24.svg');
 }
 
-/* #Section backgrounds over
-================================================== */
-
-/* #Parallax on mouse move
-================================================== */
 
 /* #Section testimonials
 ================================================== */
@@ -2176,8 +2145,6 @@ input[type="checkbox"]:checked + .switch:after {
 	padding: 0;
 }
 
-/* #Pricing sections
-================================================== */
 
 /* #Separator sections
 ================================================== */
@@ -2209,18 +2176,6 @@ input[type="checkbox"]:checked + .switch:after {
     border: none;
 	outline: none;
 }
-
-/* #Cookie
-================================================== */
-
-/* #Footers
-================================================== */
-
-/* #Pages
-================================================== */
-
-/* #Cafe page
-================================================== */
 
 .active-blue {
 	color: var(--primary) !important;
