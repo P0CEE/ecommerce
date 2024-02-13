@@ -1,4 +1,12 @@
-(function($) { "use strict";
+(function($) { "use strict";	
+
+	/* Parallax effect */
+	
+	if ($(window).width() > 1199) {
+		$().enllax();
+	}
+	
+
 	//Loading page animation
 
 	$(".animsition").animsition({
@@ -24,22 +32,92 @@
 		overlayParentElement: 'body'
 	});
 	
+
+	/* Page scroll to id */
+    
+	$(window).load(function(){"use strict";
+		
+		/* Page Scroll to id fn call */
+		$(".home-side-nav a.btn-user-profile,.navbar a.link,.one-page-nav a.nav-link,a[href='#top'],a[data-gal='m_PageScroll2id']").mPageScroll2id({
+			highlightSelector:"a.link, .one-page-nav a.nav-link, .home-side-nav a.btn-user-profile",
+			offset: 70,
+			scrollSpeed: 800,
+			scrollEasing: "easeInOutCubic"
+		});
+		
+		/* demo functions */
+		$("a[rel='next']").click(function(e){
+			e.preventDefault();
+			var to=$(this).parent().parent("section").next().attr("id");
+			$.mPageScroll2id("scrollTo",to);
+		});
+		if ($(window).width() < 1200) {
+			$(".navbar a.link,a[href='#top'],a[data-gal='m_PageScroll2id']").mPageScroll2id({
+				offset: -30,
+			});
+		}
+	
+		//Animation after load
+		
+		$('body.triger-anime').removeClass('triger-anime');		
+		
+	});
+
+
 	/* Scroll Animation */
 	
 	window.scrollReveal = new scrollReveal();
-		
+	
+	/* Shop filters */
+
+	$(function(){
+		$('.shop-mix-wrapper-1').mixItUp( {
+			selectors: {
+				target: '.shop-mix-wrap-1'
+			},
+			animation: {
+				duration: 700
+			}
+		});	
+	});
+	
+	//Input number
+	
+    jQuery('<div class="quantity-nav"><div class="quantity-button quantity-up"></div><div class="quantity-button quantity-down"></div></div>').insertAfter('.quantity input');
+    jQuery('.quantity').each(function() {
+      var spinner = jQuery(this),
+        input = spinner.find('input[type="number"]'),
+        btnUp = spinner.find('.quantity-up'),
+        btnDown = spinner.find('.quantity-down'),
+        min = input.attr('min'),
+        max = input.attr('max');
+
+      btnUp.on('click', function() {
+        var oldValue = parseFloat(input.val());
+        if (oldValue >= max) {
+          var newVal = oldValue;
+        } else {
+          var newVal = oldValue + 1;
+        }
+        spinner.find("input").val(newVal);
+        spinner.find("input").trigger("change");
+      });
+
+      btnDown.on('click', function() {
+        var oldValue = parseFloat(input.val());
+        if (oldValue <= min) {
+          var newVal = oldValue;
+        } else {
+          var newVal = oldValue - 1;
+        }
+        spinner.find("input").val(newVal);
+        spinner.find("input").trigger("change");
+      });
+
+    });
+			
 	
 	$(document).ready(function(){"use strict";
-
-        /* Progress bar animation on scroll */
-	
-		$('.progress-bar').waypoint(function() {
-			$('.progress-bar').css({
-				animation: "animate-positive 2.5s",
-				opacity: "1"
-			});
-		}, { offset: '75%' });
-
 		
 		//Scroll back to top
 		
@@ -72,7 +150,7 @@
 			jQuery('html, body').animate({scrollTop: 0}, duration);
 			return false;
 		})
-			
+				
 	});
 	
  
